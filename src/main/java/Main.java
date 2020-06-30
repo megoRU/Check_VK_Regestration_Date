@@ -17,7 +17,7 @@ import org.jsoup.nodes.Document;
 public class Main {
 
   public static void main(String[] args) throws IOException {
-    final String URL = "https://vk.com/foaf.php?id=198740519";
+    final String URL = "https://vk.com/foaf.php?id=1";
     final Response response = Jsoup.connect(URL).execute();
     final Document docs = response.parse();
     final File f = new File("src/main/resources/filename.xml");
