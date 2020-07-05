@@ -13,12 +13,15 @@ public class Main {
   private static final String URL_REGEX = "https?:\\/\\/?[\\dvk\\.]+.+";
 
   public static void main(String[] args) throws IOException {
-    for (; ; ) {
-      System.out.println("Вставьте ссылку например: https://vk.com/foaf.php?id=1");
+    while (true) {
+      System.out.println("Вставьте ссылку например: https://vk.com/id1");
       Scanner scanner = new Scanner(System.in);
       String urlScanner = scanner.nextLine();
       if (urlScanner.matches(URL_REGEX)) {
-        Document doc = Jsoup.connect(urlScanner).get();
+        int urlScannerId = urlScanner.lastIndexOf("/");
+        int length = urlScanner.length();
+        String url = urlScanner.substring(urlScannerId + 3, length);
+        Document doc = Jsoup.connect("https://vk.com/foaf.php?id=" + url).get();
         String name = doc.select("foaf|name").text();
         System.out.println(name);
         String dateReg = doc.select("ya|created").toString().substring(21, 31).replaceAll("-", ".");

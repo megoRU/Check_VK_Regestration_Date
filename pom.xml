@@ -13,6 +13,11 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.vk.api</groupId>
+      <artifactId>sdk</artifactId>
+      <version>0.5.12</version>
+    </dependency>
     <!-- https://mvnrepository.com/artifact/org.apache.xmlbeans/xmlbeans -->
     <dependency>
       <groupId>org.apache.xmlbeans</groupId>
