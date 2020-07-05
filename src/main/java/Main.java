@@ -13,7 +13,7 @@ public class Main {
   private static final String URL_REGEX = "https?:\\/\\/?[\\dvk\\.]+.+";
 
   public static void main(String[] args) throws IOException {
-    while (true) {
+    for (; ;) {
       System.out.println("Вставьте ссылку например: https://vk.com/id1");
       Scanner scanner = new Scanner(System.in);
       String urlScanner = scanner.nextLine();
